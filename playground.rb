@@ -15,3 +15,4 @@ def find_duplicates(arr)
 end
 
 find_duplicates([1, 2, 3, 4, 4, 4, 5, 5])
+
