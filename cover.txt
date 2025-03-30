@@ -1,9 +1,0 @@
-Dear Recruiting Team,
-
-I am excited to apply for the Software Developer position at "DispatchTrack". With 3+ years of experience as a Product Engineer at Sell.do, I have honed my skills in Ruby on Rails, React, and AWS while working on complex projects, including a real estate platform. I am eager to bring my expertise and problem-solving abilities to your team.
-
-Throughout my career, I have developed scalable web applications, optimized backend performance, and collaborated cross-functionally to deliver impactful solutions. My experience in cloud technologies and modern frameworks allows me to build robust and efficient applications that enhance user experience and business operations.
-
-I am particularly drawn to "DispatchTrack" because of its innovative approach and commitment to technological excellence. I would love the opportunity to contribute to your team and further develop my skills in a dynamic environment.
-
-I would appreciate the chance to discuss how my experience aligns with your requirements. Please find my resume attached for your review. Looking forward to hearing from you.
