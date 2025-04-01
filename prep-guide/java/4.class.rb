@@ -251,3 +251,243 @@ nested class: A class within another class is called as nested class
   # So it will replace all 'T' with Object
   # also if you used extends it replace it with the first bound type eg: List<? extends Number> will be replaced with List<Number>
 
+-----------------------------------------------------
+
+# POJO (Plain Old Java Object)
+# 1. It contains variables, getters, setters, constructors, methods
+# 2. class should be public
+# 3. no annotation, it does not extend any class or implement any interface
+  # When we use POJO?
+    # 1. let say a request comes from client then we should create a POJO class to store the request data
+    # 2. when we have business logic from repo to database then we build a POJO of the data and pass from service to DB
+
+# ENUM class in java
+# 1. enum is the collection of constants
+# 2. Its constants are static and final implicitly we don't need to write static and final
+# 3. it cannot be inherited because it by default extends Enum class
+# 4. it can implement interface
+# 5. enum cannot be initialized using new keyword. since it has private constructor
+# 6. it has some abstract methods which we need to implement
+
+# eg:
+public enum EnumSample {
+  MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY;
+}
+
+# some of the common methods in enum
+# 1. values()
+# 2. valueOf()
+# 3. ordinal()
+# 4. compareTo()
+# 5. equals()
+# 6. hashCode()
+
+public class Main {
+  public static void main(String[] args) {
+
+    EnumSample sample = EnumSample.valueOf("MONDAY");
+    System.out.println(sample.name()); // MONDAY
+    System.out.println(sample.ordinal()); // 0
+
+    for (EnumSample s : EnumSample.values()) {
+      System.out.println(s); // MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
+    }
+  }
+}
+
+# enum with custom values
+
+public enum EnumSample {
+  MONDAY(10, "Monday"),
+  TUESDAY(20, "Tuesday"),
+  WEDNESDAY(30, "Wednesday"),
+  THURSDAY(40, "Thursday"),
+  FRIDAY(50, "Friday"),
+  SATURDAY(60, "Saturday"),
+  SUNDAY(70, "Sunday");
+
+  # remember the variable, method constructor written here is individual item (MONDAY, TUESDAY..) not for whole enum
+  private int value;
+  private String name;
+
+  EnumSample(int value, String name) {
+    this.value = value;
+    this.name = name;
+  }
+
+  public int getVal() { return value; }
+  public String getName() { return name; }
+}
+
+public class Main {
+  public static void main(String[] args) {
+    System.out.println(EnumSample.MONDAY.getVal()); // 10
+    System.out.println(EnumSample.MONDAY.getName()); // Monday
+  }
+}
+
+
+# override enum methods
+
+public enum EnumSample {
+  MONDAY(10, "Monday"),
+  TUESDAY(20, "Tuesday"),
+  WEDNESDAY(30, "Wednesday") {
+    # override the method
+    @Override
+    public String getName() {
+      return "THIS IS WEDNESDAY";
+    }
+  },
+  THURSDAY(40, "Thursday"),
+  FRIDAY(50, "Friday"),
+  SATURDAY(60, "Saturday"),
+  SUNDAY(70, "Sunday");
+
+  # remember the variable, method constructor written here is individual item (MONDAY, TUESDAY..) not for whole enum
+  private int value;
+  private String name;
+
+  EnumSample(int value, String name) {
+    this.value = value;
+    this.name = name;
+  }
+
+  public int getVal() { return value; }
+  public String getName() { return name; }
+}
+
+public class Main {
+  public static void main(String[] args) {
+    System.out.println(EnumSample.MONDAY.getVal()); // 10
+    System.out.println(EnumSample.MONDAY.getName()); // Monday
+  }
+}
+
+# enum with abstract method
+public enum EnumSample {
+  MONDAY {
+    @Override
+    public void print() {  }
+  },
+  TUESDAY {
+    @Override
+    public void print() {  }
+  },
+  WEDNESDAY {
+    @Override
+    public void print() {  }
+  };
+
+  public abstract void print();
+}
+
+# enum with interface
+interface InterfaceSample {
+  public void print();
+}
+
+public enum EnumSample implements InterfaceSample {
+  MONDAY {
+    @Override
+    public void print() {  }
+  };
+}
+
+
+# ----------------
+NOTE: A final class cannot be inherited.
+
+public final class FinalClass {}
+public class SomeClass extends FinalClass { } // This will throw error
+
+# ----------------
+
+# singelton class
+# 1. A class which has only one instance and provides a global point of access to it is called as singleton class
+# 2. We can create a singleton class by following ways
+  # 1. Eager initialization
+  # 2. Lazy initialization
+  # 3. Thread safe singleton
+  # 4. Bill Pugh Singleton Implementation
+
+# 1. Eager initialization
+  public class Singleton {
+    private static final Singleton instance = new Singleton();
+
+    private Singleton() {}
+    public static Singleton getInstance() { return instance; }
+  }
+
+# This is not thread safe
+# 2. Lazy initialization
+  public class Singleton {
+    private static Singleton instance;
+
+    private Singleton() {}
+    public static Singleton getInstance() { return instance == null ? new Singleton() : instance; }
+  }
+
+# This is thread safe but it is not efficient since we are locking the whole method
+# 3. Thread safe singleton
+  public class Singleton {
+    private static Singleton instance;
+
+    private Singleton() {}
+    synchronized public static Singleton getInstance() { return instance == null ? new Singleton() : instance; }
+  }
+
+# Bill Pugh Singleton Implementation
+  public class Singleton {
+    private Singleton() {}
+
+    private static class SingletonHelper {
+      private static final Singleton INSTANCE = new Singleton();
+    }
+
+    public static Singleton getInstance() { return SingletonHelper.INSTANCE; }
+  }
+
+# 5. Enum Singleton
+
+enum EnumSingleton {
+  INSTANCE;
+}
+
+
+# ----------------
+
+# Immutable class
+# 1. A class which cannot be changed after its creation is called as immutable class
+# 2. We can create an immutable class by following ways
+  # 1. By declaring the class as final
+  # 2. By declaring all the instance variables as private
+  # 3. By declaring a no argument constructor
+  # 4. By declaring a constructor with all the instance variables as final
+  # 5. By declaring a getter method for all the instance variables
+  # 6. By declaring a setter method for all the instance variables
+
+  public final class ImmutableClass {
+    private final int id;
+    private final String name;
+    private final List<String> list;
+
+    ImmutableClass(int id, String name, List<String> list) {
+      this.id = id;
+      this.name = name;
+      this.list = list;
+    }
+
+    public int getId() { return id; }
+    public String getName() { return name; }
+
+    # here we are returning the new ArrayList since we don't want to return the original list
+    # and we are not able to change the original list since it is final
+    public List<String> getList() { return new ArrayList<>(list); }
+  }
+
+# ----------------
+
+#
+
+
