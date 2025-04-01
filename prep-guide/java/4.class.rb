@@ -203,4 +203,51 @@ nested class: A class within another class is called as nested class
     }
   }
 
+  # wildcard in java
+  # 1. Wildcard is used to represent the unknown type
+  # 2. It is used in the place of T
+  # 3. It is used in the place of Object
+  # 4. It is used in the place of non-premitive data type
+  # 5. It is used in the place of generic class
+  # 6. It is used in the place of interface
+
+  # Upper bound wildcard
+  public class Print {
+    # Here we can pass the list of Number or its child class
+    public void print(List<? extends Number> list) {}
+  }
+
+  # Lower bound wildcard
+  public class Print {
+    # Here we can pass the list of Integer or its super class
+    public void print(List<? super Integer> list) {}
+  }
+
+  # why we need wild card operator, can't we achieve from generic 'T'
+  # Here is the example of both
+  public class Print {
+    # wildcard method
+    public void print(List <? extends Number> list) {}
+
+    # generic method
+    public <T> void print(List<T> list) {}
+  }
+
+    # 1. wild card method gives more flexibility than generic method since you can pass the list of different types of non-premitive data types above than Number
+    # 2. generic method are more restrictive than wild card since you need to pass the same type of non-premitive data type
+    # 3. you can use super keyword in wild card method but you cannot use it in generic method
+    # 4. you can have pass single type of(lower or upper possible but not completely different like Number and String) non-premitive data type in wild card method but in generic method you can pass multiple type of non-premitive data type
+
+
+  # PECS: Producer Extends Consumer Super
+  # Producer: If you are using the ? extends then you are a producer
+  # Consumer: If you are using the ? super then you are a consumer
+  # Extends: If you are using the ? extends then you are a producer
+  # Super: If you are using the ? super then you are a consumer
+
+
+  # Type Eraser
+  # In generic class we can pass the different type of non-premitive data type but at runtime it will be considered as Object
+  # So it will replace all 'T' with Object
+  # also if you used extends it replace it with the first bound type eg: List<? extends Number> will be replaced with List<Number>
 
