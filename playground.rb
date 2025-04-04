@@ -1,18 +1,35 @@
-# array of integers find the duplicates
-# [1, 2, 3, 4, 4, 4, 5, 5]
-# [4, 5]
+# post, user, comments
+
+fetch post,
+      comments,
+      current user followers
 
 
-def find_duplicates(arr)
-  hash = {}
-  output = []
-  arr.each do |num|
-    hash[num] = hash[num].to_i + 1
-    output << num if hash[num] > 1
-  end
-
-  puts output.uniq.join(', ')
+class Post
+  belongs to :user
+  has_many :comments
 end
 
-find_duplicates([1, 2, 3, 4, 4, 4, 5, 5])
+# comments of my followers
+class Comment
+  belongs to :post
+  belongs to :user
+end
 
+class User
+  user has_many :comments
+  user has many :posts
+  has_many :followings, class name: 'User'
+end
+
+# Retrieve post and comments of users follower
+
+
+# query:
+# return post whose comments made by followings
+following_ids = User.find(user_id).followings.pluck(:id)
+post_ids = Comment.in(user_id: following_ids).pluck(:post_id)
+posts = Post.in(id: post_ids)
+
+following_ids = User.find(user_id).followings.pluck(:id)
+Post.where('comments.user_id': following_ids).includes(:comments, :user)

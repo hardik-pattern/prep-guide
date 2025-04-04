@@ -895,3 +895,34 @@ Rails 6 requires Ruby 2.5.0 or higher
 
 
 https://guides.rubyonrails.org/active_record_multiple_databases.html
+
+Asset Pipelines in Rails
+What does sprockets or propshaft do -
+    Concatenation
+    Minification
+    Precompiling
+    Fingerprinting
+        Fingerprinting is a technique that makes the name of a file dependent on the contents of the file. When the file contents change, the filename is also changed. It helps versioning
+Sprockets
+    Concatenation
+    Minification
+    Fingerprinting
+    After this steps it adds all the assets in public/assets
+Propshaft
+    Only Fingerprinting
+    Doesnt perform bundling and minification (jsbuilding-rails cssbuilding-rails gems does it)
+ImportMaps
+    It is basically a hash, If we import "react" - it points to "https://ga.jspm.io/npm:react@17.0.2/index.js"
+    has importmap.rb where you can add mapping
+    eg. bin/importmap pin react@17.0.1
+    Skips bundling hence no need to webpacker
+    No need of yarn or node js
+    Cant use it for JSX or TS (ReactJS) where you will also need yarn and node
+TurboStreams
+    For live rendering of views
+    Can be updated via even workers or models
+    Uses websocket
+    <turbo-stream>
+TurboFrames
+    Internally uses AJAX to fetch HTML
+    Instead of reloading whole page only part of page is reloaded
