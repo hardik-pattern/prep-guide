@@ -178,3 +178,40 @@ class Main {
 # Comparable: A comparable is a function that compares two objects and returns an integer value.
   #  It has one method called as compareTo
 
+# ---------------------------------------------------------------------------------------------------
+
+# Deque: It means we can add or remove from both ends of the queue
+# methods which are available in deque
+  # add(), offer(), poll(), ... all methods from collections
+  # offerFirst(), offerLast(), pollFirst(), pollLast(), peekFirst(), peekLast(): This does not throws an exception
+  # addFirst(), addLast(), removeFirst(), removeLast(), getFirst(), getLast()...: This throws an exception if the queue is empty
+
+  # add(): Internally calls addLast()
+  # offer(): Internally calls offerLast()
+  # poll(): Internally calls pollFirst()
+  # peek(): Internally calls peekFirst()
+  # remove(): Internally calls removeFirst()
+  # element(): Internally calls getFirst()
+
+# We can use Deque as a stack
+    # push(): Internally calls addFirst()
+    # pop(): Internally calls removeFirst()
+    # peek(): Internally calls getFirst()
+
+# ** ArrayDeque is not a thread safe so we can use ConcurrentLinkedDeque
+
+# ---------------------------------------------------------------------------------------------------
+
+# List:
+  # ArrayList:
+    # methods:
+      # add(): add element at the end of the list
+      # add(int index, E element): add element at the index
+      # remove(): remove element at the end of the list
+      # remove(int index): remove element at the index
+      # get(): get element at the index
+      # set(): set element at the index
+      # size(): get the size of the list
+      # isEmpty(): check if the list is empty
+      # contains(): check if the list contains the element
+      # indexOf(): get the index of the element
