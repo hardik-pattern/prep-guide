@@ -926,3 +926,30 @@ TurboStreams
 TurboFrames
     Internally uses AJAX to fetch HTML
     Instead of reloading whole page only part of page is reloaded
+
+
+Creating an Object
+  before_validation
+  after_validation
+  before_save
+  around_save
+  before_create
+  around_create
+  after_create
+  after_save
+  after_commit / after_rollback
+
+Saving an Object
+  before_validation
+  after_validation
+  before_save
+  around_save
+  before_create
+  around_create
+
+Destroying an Object
+  before_destroy
+  around_destroy
+  after_destroy
+
+

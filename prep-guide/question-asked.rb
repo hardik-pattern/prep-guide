@@ -169,3 +169,29 @@ B.runner
 # What is active storage in rails?
 # What is difference between include and extend in ruby?
 # What is difference between include and prepend in ruby?
+# What is callback sequence in rails?
+# What is use of iat field in jwt token?
+# what is 'activeadmin' in rails?
+# what is 'pre-command' in rails?
+# why RoR is convention over configuration?
+
+# consider the scenario
+  # There are 3 models user, posts, comments
+  # I want to see those posts where my followers commented
+
+# Post
+#   has_many :comments
+#   belongs_to :user
+
+# Comment
+#   belongs_to :user
+#   belongs_to :post
+
+# User
+#   has_many :posts
+#   has_many :comments
+#   has_many :followers, class_name: "User", foreign_key: :follower_id
+#   has_many :following, class_name: "User", foreign_key: :following_id
+
+# Post.joins(:comments).where(comments: { user_id: current_user.followers.pluck(:id) })
+
