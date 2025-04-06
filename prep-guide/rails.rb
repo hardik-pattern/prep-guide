@@ -897,6 +897,7 @@ Rails 6 requires Ruby 2.5.0 or higher
 https://guides.rubyonrails.org/active_record_multiple_databases.html
 
 Asset Pipelines in Rails
+
 What does sprockets or propshaft do -
     Concatenation
     Minification
@@ -912,8 +913,7 @@ Propshaft
     Only Fingerprinting
     Doesnt perform bundling and minification (jsbuilding-rails cssbuilding-rails gems does it)
 ImportMaps
-    It is basically a hash, If we import "react" - it points to "https://ga.jspm.io/npm:react@17.0.2/index.js"
-    has importmap.rb where you can add mapping
+    It is basically a hash, If we import "react" - it points to "https://ga.jspm.io/npm:react@17.0.2/index.js" has importmap.rb where you can add mapping
     eg. bin/importmap pin react@17.0.1
     Skips bundling hence no need to webpacker
     No need of yarn or node js
