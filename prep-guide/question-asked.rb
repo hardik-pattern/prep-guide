@@ -174,6 +174,11 @@ B.runner
 # what is 'activeadmin' in rails?
 # what is 'pre-command' in rails?
 # why RoR is convention over configuration?
+# what is difference between 'sym' and 'string' in ruby?
+# what is difference between member and collection route in rails?
+# what is mixin in rails?
+# why we use mixin in rails?
+
 
 # consider the scenario
   # There are 3 models user, posts, comments
