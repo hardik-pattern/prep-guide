@@ -193,12 +193,12 @@ class Main {
   # remove(): Internally calls removeFirst()
   # element(): Internally calls getFirst()
 
-# We can use Deque as a stack
+# We can use Dequeue as a stack
     # push(): Internally calls addFirst()
     # pop(): Internally calls removeFirst()
     # peek(): Internally calls getFirst()
 
-# ** ArrayDeque is not a thread safe so we can use ConcurrentLinkedDeque
+# ** ArrayDequeue is not a thread safe so we can use ConcurrentLinkedDequeue
 
 # ---------------------------------------------------------------------------------------------------
 

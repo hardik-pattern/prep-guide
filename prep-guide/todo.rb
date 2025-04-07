@@ -8,7 +8,6 @@
 # Concurrency & Background Jobs (Sidekiq best practices, race conditions)
 # Performance Tuning (Profiling with Bullet, Rack Middleware, DB indexing)
 
-
 # : What is the difference between optimistic and pessimistic locking in Rails?
 # > In a multi-user environment, two users might try to update the same record at the same time. This can cause data conflicts.
     # To prevent conflicts, Rails provides two types of   locking:
@@ -29,11 +28,6 @@
       # end
 #
 
-
-
-
-
-
 SOLID Principle:
 Single Responsibility Principle (SRP): A class or module should have only one reason to change, meaning it should have a single, well-defined responsibility.
 
@@ -44,8 +38,6 @@ Liskov Substitution Principle (LSP): Subtypes should be substitutable for their 
 Interface Segregation Principle (ISP): Clients should not be forced to depend on methods they do not use. Interfaces should be small and focused, with clients depending only on the methods they need.
 
 Dependency Inversion Principle (DIP): High-level modules should not depend on low-level modules. Both should depend on abstractions (interfaces or abstract classes). Abstractions should not depend on details. Details (concrete classes) should depend on abstractions.
-
-
 
 Single Responsibility Principle (SRP):  A class should have only one reason to change.
 
