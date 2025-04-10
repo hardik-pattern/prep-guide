@@ -178,7 +178,7 @@ B.runner
 # what is difference between member and collection route in rails?
 # what is mixin in rails?
 # why we use mixin in rails?
-
+# What is new in rails 7?
 
 # consider the scenario
   # There are 3 models user, posts, comments

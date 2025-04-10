@@ -12,12 +12,12 @@
 #        |                             |                             |
 # +-----Queue (interface)              List (interface)              Set (interface)--------------------------+------------------------+
 # |       |                            |                             |                                        |                        |
-# |      Deque (interface)             |                            SortedSet (interface)               HashSet (class)        LinkedHashSet (class)
+# |      Dequeue (interface)           |                            SortedSet (interface)               HashSet (class)        LinkedHashSet (class)
 # |       |         |                  |                             |
 # |       |         |                  |                            NavigableSet (interface)
-# |       |         |      +-----------+---------------+             |
-# |    ArrayDeque   |      |           |               |            TreeSet
-# |                 +--LinkedList     ArrayList      Vector
+# |       |         +------+-----------+---------------+             |
+# |    ArrayDequeue        |           |               |            TreeSet
+# |                    LinkedList     ArrayList      Vector
 # |                                                    |
 # PriorityQueue                                        |
 #                                                     Stack
@@ -205,13 +205,116 @@ class Main {
 # List:
   # ArrayList:
     # methods:
-      # add(): add element at the end of the list
+      # add(): add element at the end of the list. It will shift all the elements to the right side.
       # add(int index, E element): add element at the index
+      # addAll(int index, Collection<? extends E> c): add all the elements of the collection at the index
       # remove(): remove element at the end of the list
       # remove(int index): remove element at the index
       # get(): get element at the index
-      # set(): set element at the index
+      # set(): set element at the index, it will replace the element at the index with the new element
       # size(): get the size of the list
       # isEmpty(): check if the list is empty
       # contains(): check if the list contains the element
       # indexOf(): get the index of the element
+      # listIterator(): get the list iterator
+
+# Instance of using listIterator():
+  List list = new ArrayList<>();
+  ListIterator<Integer> itr = list.listIterator();
+  while(itr.hasNext()) {
+    System.out.println(itr.next());
+  }
+
+  while(itr.hasPrevious()) {
+    System.out.println(itr.previous());
+  }
+# How list is different from queue:
+  # List stores the data in the order of insertion and we can access using index but queue does not store the data in the order of insertion and we can not access using index
+
+# How list is different from set:
+  # List allows duplicate elements but set does not allow duplicate elements
+  # List allows null elements but set does not allow null elements
+  # List allows multiple null elements but set does not allow multiple null elements
+  # List allows heterogeneous elements but set does not allow heterogeneous elements
+  # List allows mutable elements but set does not allow mutable elements
+
+# How list is different from map:
+  # List stores the data in the order of insertion and we can access using index but map does not store the data in the order of insertion and we can not access using index
+
+# CopyOnWriteArrayList: It is a thread safe list.
+
+# Vector: It is a thread safe list, It is synchronized and slow. It put a lock on the entire list when we are iterating over the list.
+# Stack: It is a thread safe because it is a child of vector.
+
+
+
+# ---------------------------------------------------------------------------------------------------
+
+  #     +---------------------------------Map(interface)
+  #     |                                         |
+  #     |                                         |
+  #     |                                         |
+  #     |                                         +----------------+
+  # SortedMap(interface)                          |                |
+  #     |                                         |                |
+  #     |                                      HashTable       LinkedHashMap
+  # NavigableMap(interface)
+  #     |
+  #   TreeMap
+
+
+#* HashMap is not thread safe, so we can use ConcurrentHashMap
+# Method in Map:
+  # size(): get the size of the map
+  # isEmpty(): check if the map is empty
+  # put(): add key and value to the map
+  # get(): get the value of the key
+  # remove(): remove the key and value from the map
+  # containsKey(): check if the map contains the key
+  # containsValue(): check if the map contains the value
+  # putIfAbsent(): put the value if not present
+  # containsKey(): check if the map contains the key
+  # containsValue(): check if the map contains the value
+  # getOrDefault(key, defaultValue): get the value of the key, if the key is not present, return the defaultValue
+  # replace(key, oldValue, newValue): replace the value of the key, if the old value is present
+  # replaceAll(BiFunction<? super K, ? super V, ? extends V> function): replace all the values of the map
+
+  # How to iterate over the map:
+    for(Map.Entry<K, V> entry : map.entrySet()) {
+      System.out.println(entry.getKey() + " " + entry.getValue());
+    }
+
+    for(K key : map.keySet()) {
+      System.out.println(key + " " + map.get(key));
+    }
+
+    for(V value : map.values()) {
+      System.out.println(value);
+    }
+
+#* HashTable is synchronized and thread safe version of HashMap
+#* LinkedHashMap is a map that maintains the order of insertion
+#* TreeMap is a map that maintains the order of insertion and sorted order
+#* HashMap is not thread safe, so we can use ConcurrentHashMap
+#* HashTable is synchronized and thread safe version of HashMap
+
+
+# LinkedHashMap:
+  # LinkedHashMap is a map that maintains the order of insertion
+  # LinkedHashMap is not thread safe, so we can use ConcurrentLinkedHashMap
+  # LinkedHashMap is not synchronized, so we can use ConcurrentLinkedHashMap
+  # LinkedHashMap is not thread safe, so we can use ConcurrentLinkedHashMap
+
+  # It uses doubly linked list to maintain the order of insertion
+  # It has accessOrder property, if it is true, it will maintain the order of access. When we get the element, it will be moved to the end of the list
+
+# TreeMap:
+  # TreeMap is a map that maintains the order of insertion and sorted order
+  # TreeMap is not thread safe, so we can use ConcurrentTreeMap
+  # TreeMap is not synchronized, so we can use ConcurrentTreeMap
+  # It uses Red-Black tree to maintain the order of insertion and sorted order
+  # It is not thread safe, so we can use ConcurrentTreeMap
+
+# Map<Integer, Integer> map = new HashMap<>((Integer a, Integer b) -> b - a); // sort by descending order
+
+
