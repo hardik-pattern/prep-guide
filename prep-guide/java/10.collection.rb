@@ -318,3 +318,65 @@ class Main {
 # Map<Integer, Integer> map = new HashMap<>((Integer a, Integer b) -> b - a); // sort by descending order
 
 
+# TreeMap:
+  # TreeMap is a map that maintains the order of insertion and sorted order
+  # TreeMap is not thread safe, so we can use ConcurrentTreeMap
+
+SortedMap<Integer, Integer> map = new TreeMap<>();
+map.put(5, 5);
+map.put(4, 4);
+map.put(3, 3);
+map.put(2, 2);
+map.put(1, 1);
+
+# { 1=1, 2=2, 3=3, 4=4, 5=5 }
+
+map.headMap(3); // return the map from the beginning to the key 3 (exclusive) # { 1=1, 2=2 }
+map.tailMap(3); // return the map from the key 3 (inclusive) to the end # { 3=3, 4=4, 5=5 }
+map.subMap(2, 4); // return the map from the key 2 (inclusive) to the key 4 (exclusive) # { 2=2, 3=3 }
+map.firstKey(); // return the first key # 1
+map.lastKey(); // return the last key # 5
+
+# ---------------------------------------------------------------------------------------------------
+
+# Set:
+  # Set does not follow the order of insertion
+  # Set cannot be accessed using index
+  # Set is a collection that does not allow duplicate elements
+  # Set is not synchronized, so we can use ConcurrentSet
+  # Set is not thread safe, so we can use ConcurrentSet
+
+# HashSet:
+  # HashSet internally uses HashMap to store the elements, It stores the provided element as key and value as 'new Object()'
+  # HashSet is a set that does not allow duplicate elements
+  # HashSet is not thread safe, so we can use ConcurrentHashSet
+  # HashSet is not synchronized, so we can use ConcurrentHashSet
+
+# method used in HashSet:
+  # add(): add element to the set
+  # remove(): remove element from the set
+  # contains(): check if the set contains the element
+  # size(): get the size of the set
+  # isEmpty(): check if the set is empty
+  # addAll(): add all the elements of the collection to the set
+  # retainAll(): retain all the elements of the collection from the set
+  # removeAll(): remove all the elements of the collection from the set
+  # clear(): remove all the elements from the set
+  # iterator(): get the iterator of the set
+  # stream(): get the stream of the set
+  # parallelStream(): get the parallel stream of the set
+
+#* If you try to add the value in HashSet while iterating over the set, it will throw a ConcurrentModificationException
+#* To avoid this, we can use ConcurrentHashSet
+
+# LinkedHashSet: LinkedHashSet is a set that maintains the order of insertion
+  # It uses doubly linked list to maintain the order of insertion
+  # LinkedHashSet is not thread safe, so we can use ConcurrentLinkedHashSet
+  # LinkedHashSet is not synchronized, so we can use ConcurrentLinkedHashSet
+
+# TreeSet: TreeSet is a set that maintains the order of insertion and sorted order
+  # It uses Red-Black tree to maintain the order of insertion and sorted order
+  # TreeSet is not thread safe, so we can use ConcurrentTreeSet
+  # TreeSet is not synchronized, so we can use ConcurrentTreeSet
+
+
