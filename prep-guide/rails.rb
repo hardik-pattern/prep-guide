@@ -1,4 +1,3 @@
-
 # Self referential models
 # - Here the employee has his/her manager which again is an employee only, a manager who is an employee can have many subordinates (vice-versa).
 
@@ -824,6 +823,17 @@ def start_multiple_threads(batch_records)
 end
 
 
+Multitencancy
+  Multitenancy is a software architecture where a single instance of a software application serves multiple tenants. Each tenant is a group of users who share common access with specific privileges to the software instance.
+  Each tenants data is isolated and remains invisible to other tenants.
+  There are three main approaches to multitenancy:
+
+  1. Database-per-tenant: Each tenant has its own database. This approach provides the highest level of isolation but can be resource-intensive.
+  2. Shared database, separate schema: All tenants share a single database, but each tenant has its own schema. This approach provides a balance between isolation and resource efficiency.
+  3. Shared database, shared schema: All tenants share the same database and the same schema. This approach is the most resource-efficient but provides the least isolation.
+  4. Hybrid approach: A combination of the above methods, allowing for flexibility based on tenant needs.
+
+
 Q. What is JWT tokens
 
 JWTs are commonly used for authentication and authorization in web applications. In Rails, JWTs can be used to manage user sessions and ensure secure communication between clients and servers.
@@ -896,37 +906,40 @@ Rails 6 requires Ruby 2.5.0 or higher
 
 https://guides.rubyonrails.org/active_record_multiple_databases.html
 
-Asset Pipelines in Rails
+# https://guides.rubyonrails.org/asset_pipeline.html#asset-load-order
+# https://www.fastruby.io/blog/the-assets-pipeline-history.html
 
-What does sprockets or propshaft do -
+Asset Pipelines in Rails:
+  What does sprockets or propshaft do -
     Concatenation
     Minification
     Precompiling
-    Fingerprinting
-        Fingerprinting is a technique that makes the name of a file dependent on the contents of the file. When the file contents change, the filename is also changed. It helps versioning
-Sprockets
+    Fingerprinting: Fingerprinting is a technique that makes the name of a file dependent on the contents of the file. When the file contents change, the filename is also changed. It helps versioning
+  Sprockets
     Concatenation
     Minification
     Fingerprinting
     After this steps it adds all the assets in public/assets
-Propshaft
+  Propshaft
     Only Fingerprinting
     Doesnt perform bundling and minification (jsbuilding-rails cssbuilding-rails gems does it)
-ImportMaps
+  ImportMaps:
     It is basically a hash, If we import "react" - it points to "https://ga.jspm.io/npm:react@17.0.2/index.js" has importmap.rb where you can add mapping
     eg. bin/importmap pin react@17.0.1
     Skips bundling hence no need to webpacker
     No need of yarn or node js
     Cant use it for JSX or TS (ReactJS) where you will also need yarn and node
-TurboStreams
+  TurboStreams
     For live rendering of views
     Can be updated via even workers or models
     Uses websocket
     <turbo-stream>
-TurboFrames
+  TurboFrames
     Internally uses AJAX to fetch HTML
     Instead of reloading whole page only part of page is reloaded
 
+
+Propshaft does not follow asset include order while sprocket always load the file in the order you provided
 
 Creating an Object
   before_validation
@@ -953,3 +966,78 @@ Destroying an Object
   after_destroy
 
 
+
+Resource to read:
+#* active model vs active record vs active resource >> # https://stackoverflow.com/a/12765490/30052210
+#* what is shallow routes in rails? >>>
+    # In Ruby on Rails, shallow routes are used to simplify nested routes and make your URLs cleaner and shorter.
+
+    # When you have nested resources, like:
+       resources :authors do
+         resources :books
+       end
+    # Rails will generate routes like: /authors/:author_id/books/:id
+
+    # But sometimes you don’t need the parent (author_id) when you're working with a single book, like showing or editing a book.
+
+    # By adding shallow: true, Rails will only include the parent in the routes that need it.
+      resources :authors do
+        resources :books, shallow: true
+      end
+
+    # GET /authors/:author_id/books → list books for an author
+    # POST /authors/:author_id/books → create a book for an author
+    # GET /books/:id → show a specific book
+    # PATCH /books/:id → update a book
+    # DELETE /books/:id → delete a book
+
+#* What’s the difference between rake and rails commands?
+  # >> Think of rails as the commander of the Rails framework. It helps you do things like start the server (rails server), create a model (rails generate model), or run migrations (rails db:migrate).
+
+  #   On the other hand, rake is like a helper tool that runs tasks defined in .rake files. It’s often used for tasks like setting up the database (rake db:setup) or running custom tasks (rake my_task:run).
+
+#* How rails assets pipeline works?
+  >>
+  # Preprocessing
+  #  It compiles files written in SCSS, CoffeeScript, or ERB into plain CSS/JS.
+  #  Example: application.scss → application.cs
+
+  #  Concatenation
+  #  It combines multiple files into one.
+  #  This reduces the number of HTTP requests (faster load time)
+
+  #  Minification
+  #  It removes extra spaces and comments to make files smaller.
+  #  This improves performance
+
+  #  Fingerprinting
+  #  Adds a unique hash to filenames (like application-abc123.css) to help with cache busting.
+  #  Ensures users always get the latest version after deployment
+
+  #  Serving
+  #  Rails serves precompiled assets from the /public/assets directory in production.
+
+
+#* What role does Rack play in Rails? Have you ever built custom middleware? If so, how?
+  # Rack is a middleware layer that connects the web server to your Rails application.
+  # It takes the incoming HTTP request, sends it to Rails, and then takes Rails' HTTP response and sends it back to the browser.
+  # Think of it as the interpreter between the browser and your Rails app.
+
+  # class RequestTimer
+  #   def initialize(app)
+  #     @app = app
+  #   end
+
+  #   def call(env)
+  #     start_time = Time.now
+  #     status, headers, response = @app.call(env)
+  #     duration = Time.now - start_time
+  #     Rails.logger.info "Request took #{duration.round(2)} seconds"
+  #     [status, headers, response]
+  #   end
+  # end
+
+  # config.middleware.use RequestTimer
+
+# Metaprogramming in Ruby
+# https://courses.bigbinaryacademy.com/learn-rubyonrails/rails-macros-and-metaprogramming/

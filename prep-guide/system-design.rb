@@ -411,4 +411,76 @@ publisher.notify
 
 
 
+# ---------------------------------------------------------------------------------------------------------------------
+# Design Patterns Majorly used in Rails:
+# ---------------------------------------------------------------------------------------------------------------------
 
+#     1. Singleton classes (Creational Design Patterns)
+#         Often required to create classes with only one objects
+#         Eg, Logger DBConnection
+#         In ruby we can include Singleton module in any class to make it a singleton class
+#     2. Factory method (Creational Design Patter)
+#         An interface is treated as a Factory and its methods are overriden by child class
+#         Eg, Notification class will have send method which accepts two arguments type and content,
+#         now if I want to send notification I will use Notification.new.send(:email, 'Content') rather than calling
+#         EmailNotification.send which is called by Notification.send internally
+#     3. Abstract Factory (Creational Design Pattern): basically it gives you an object of factory from which you can create another object based on condition
+#         It is basically categorical interfaces to categorize every class/module in higher level
+#         Interface Vehicle will be inherited by Class TwoWheeler and For Wheeler
+#     4. Builder (Creational Design Pattern)
+#         It is used to create complex objects step by step
+#         Eg, if I want to build custom report the responsibility of building dimesions metrics and filters are
+#         distributed among various builders
+#     5. Prototype (Creational Design Pattern)
+#         It is a design pattern where class implements the prototype interface which has method called as clone()
+#         So lets say we have Robot as a class and we want to create the clone of it so instead creating assigning value in clone object
+#         we can create an clone method in Robot instance method and return the object of clone
+
+
+#     6. Decorator (Structural Design Pattern)
+#         It is used to add new functionality to an existing object without modifying its structure
+#         Eg, if I want to add a new functionality to a class I can create a decorator class which will inherit
+#         the original class and override the methods to add new functionality for example as_json
+#     7. Composite (Structural Design Pattern)
+#         It is used to treat individual objects and compositions of objects uniformly
+#         Eg, if I want to create a tree structure where each node can be a leaf or a composite node
+#         I can create a class which will inherit from the base class and override the methods to add new functionality
+
+
+#     8. Observer (Behavioral Design Pattern)
+#         It is used to notify multiple objects when a state of an object changes
+#         Eg, if I want to notify all the observers when a user is created I can use observer pattern
+#         where I will create a class which will inherit observable and then I can call notify_observers
+#         whenever a user is created
+#     9. Policy (Behavioral Design Pattern)
+#         It is used to define a family of algorithms, encapsulate each one, and make them interchangeable
+#         Eg, if I want to create a class which will have different policies for different users
+#         I can create a class which will inherit from the base class and override the methods to add new functionality
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+# HLD - High Level Design
+
+# Q. How to handle rate limiting?
+
+  # There are several ways to handle rate limiting in a web application, including:
+    # Token Bucket Algorithm
+    #   A bucket holds a fixed number of tokens that are added at a constant rate.
+    #   Each incoming request consumes a token.
+    #   If the bucket is empty (no tokens available), the request is either delayed or rejected.
+    #   This algorithm allows for bursts of traffic as long as there are tokens.
+
+    # Leaky Bucket Algorithm
+    #   Requests enter a queue (the "bucket") and are processed at a fixed rate.
+    #   If the bucket overflows (i.e., too many incoming requests), excess requests are dropped.
+    #   This smooths out bursts, ensuring a consistent processing rate.
+
+    # Fixed Window Counter
+    #   A counter tracks the number of requests within a fixed time window (e.g., 100 requests per minute).
+    #   Once the limit is reached, further requests within that window are rejected.
+    #   Simple to implement but can cause bursts at window edges ("thundering herd" problem).
+
+    # Sliding Window Log or Counter
+    #   A more accurate version of fixed window.
+    #   Maintains a log or rolling count of request timestamps in the current sliding window (e.g., past 60 seconds).
+    #   Allows more precise rate limiting without the burstiness of fixed windows.

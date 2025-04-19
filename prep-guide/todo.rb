@@ -250,4 +250,3 @@ end
 email_service = EmailService.new
 user = User.new(email_service)
 user.notify
-

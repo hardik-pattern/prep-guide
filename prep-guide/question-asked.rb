@@ -1,3 +1,5 @@
+# common interview questions: https://github.com/gardeziburhan/rails_interview_questions
+
 # Tell me about yourself/ introduce yourself?
 # What is your Role and responsibility?
 # What you are currently working on? / Tell me about the features you delivered?
@@ -200,3 +202,41 @@ B.runner
 
 # Post.joins(:comments).where(comments: { user_id: current_user.followers.pluck(:id) })
 
+# What is asset-pipeline in rails?
+# How asset-pipeline works?
+# What is difference between 'this' in node.js and web javascript?
+# What is difference between button_to and button_tag in rails view?
+# What is cookies?
+# What is CSRF?: read: https://medium.com/rubyinside/a-deep-dive-into-csrf-protection-in-rails-19fa0a42c0ef
+# What is use of CSRF token?
+# How rails get the CSRF token and pass to header?
+# What is the flow then the request hits the webserver?
+# How cookie works in rails?
+# What is jwt tokens? can we override the authentication of jwt?
+# What is importmaps?
+# What is hotwire, turbo stream, zeit?
+# How browser knows mapping, if I have main.js and it's compiled file is main-12345678.js then how browser will know this is the actual file?
+  # >> (tried to ask about where is mapping stored?) -> manifest.json
+# How do we store the env variables in rails?
+# What are callbacks?
+# What is difference between active record and active model?
+# what is N+1 query? What is difference between eager loading?, preloading?, lazy loading?
+# What is output of "User.all" ?
+# What are steps involved in assets compilation?
+# What is constructor method in js
+  # eg: function a() { this.name = 'Hello'; }
+  # output? new a();
+# What is CDN?
+# What is OAuth? How OAuth works? How to implement OAuth?
+# What is access token? What is refresh token?
+# What is <Outlet/> in react routes
+# Have you used Rspec why we use Rspec?
+# What is difference between Rspec and Minitest?
+
+# Explain MVC
+# Types of Views
+# Role of controllers
+# Multitenancy
+# Schema migrations
+# Caching
+# Props and state in React
