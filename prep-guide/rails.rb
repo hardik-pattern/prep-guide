@@ -842,6 +842,14 @@ A JWT is composed of three parts:
 Header: Specifies the algorithm used for signing the token (e.g., HS256).
 Payload: Contains the claims, such as user information and expiration time.
 Signature: Ensures the token has not been tampered with.
+  Some important default/fields in jwt token
+    1. iss: Issuer - The entity that issued the token.
+    2. sub: Subject - The subject of the token, usually the user ID.
+    3. aud: Audience - The intended recipient of the token.
+    4. exp: Expiration - The expiration time of the token.
+    5. nbf: Not Before - The time before which the token should not be accepted.
+    6. iat: Issued At - The time the token was issued.
+    7. jti: JWT ID - A unique identifier for the token.
 
 gem 'jwt'
 
