@@ -149,3 +149,4 @@ Some Advance SQL Function:
    WHERE candidate IS NOT NULL
      AND candidate <> ''
   )
+

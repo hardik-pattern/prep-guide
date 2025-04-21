@@ -31,6 +31,9 @@ Easier Data Distribution: Data can be distributed based on specific criteria (e.
 Cost-Effective Scaling: Sharding enables the use of multiple smaller, less expensive servers instead of a single large, costly server, making it a cost-effective way to scale the database.
 Resource Optimization: By distributing the data and workload across multiple servers, sharding helps optimize resource usage, reducing the risk of overloading any single server.
 
+Sharding vs. partitioning: What’s the difference?
+  >https://planetscale.com/blog/sharding-vs-partitioning-whats-the-difference
+
 Techniques of Scaling Database Sharding-
 
   1. Vertical Partitioning -
@@ -445,6 +448,23 @@ publisher.notify
 #         It is used to treat individual objects and compositions of objects uniformly
 #         Eg, if I want to create a tree structure where each node can be a leaf or a composite node
 #         I can create a class which will inherit from the base class and override the methods to add new functionality
+#     8. Adapter Design Pattern:
+          # Here we are using the adapter pattern to convert the interface of one class into another interface that the client expects.
+          # consider the following example:
+            # We have a class called `LegacyPrinter` that prints text, and we want to adapt it to work with a new interface called `ModernPrinter`.
+            # So we create an adapter class called `ModernPrinter` that takes an instance of `LegacyPrinter` and adapts its interface to the new one.
+
+            interface ModernPrinterAdapter { void printModern(); }
+
+            class ModernPrinterAdaptee implements ModernPrinterAdapter extendes LegacyPrinter { void printModern() { super.printText(); } }
+
+            class Main{
+              ModernPrinterAdapter modernPrinter = new ModernPrinterAdaptee();
+              modernPrinter.printModern();
+            }
+
+#     9. Bridge Design Pattern (Structural Design Pattern)
+#         It is used to separate the abstraction from its implementation
 
 
 #     8. Observer (Behavioral Design Pattern)

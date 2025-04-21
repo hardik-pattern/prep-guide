@@ -8,10 +8,17 @@ end
 
 # ==========================================
 
+# Eager loading in rails
+
+includes: It makes 2 different queries to load the data. It loads the parent and child records in 2 different queries. (We can add conditions to the child records as well)
+preload: It makes 2 different queries to load the data. It loads the parent and child records in 2 different queries. (We cannot add conditions to the child records)
+eager_load: It makes 1 single query to load the data. It loads the parent and child records in a single query using a LEFT OUTER JOIN.
+
+
 # Q. What are some of the database level operations that can be performed so that it improves the performance of the system -
 
 1. Indexing -
-- Indexes can significantly increase the speed of data retrival
+- Indexes can significantly increase the speed of data retrieval
 CREATE INDEX index_name ON table_name (column_name);
 
 - Using composite indexes can help as well which queries on multiple columns at once
@@ -25,7 +32,7 @@ Refactor queries to avoid unnecessary complexity, use joins efficiently, and avo
 3. Normalize Tables (please check in question-asked.rb)
 remove redundancy from the tables and shorten the size of tables so that queries are efficient and data is lesser.
 
-4. Denormalise -
+4. Denormalize -
 Sometimes, denormalization (introducing redundancy) can improve performance by reducing the number of joins required for complex queries. This should be done carefully to balance between performance and data integrity.
 
 5. Implement Caching -
