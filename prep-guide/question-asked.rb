@@ -240,3 +240,40 @@ B.runner
 # Schema migrations
 # Caching
 # Props and state in React
+
+# Given a string s and an integer k, return the length of the longest substring that contains at most k distinct characters.
+# s = "eceba", k = 2
+
+# # Output: 3
+
+# # Explanation: "ece" is the longest substring with at most 2 distinct chars
+
+def length_of_longest_substring_k_distinct(s, k)
+  arr = []
+
+  for i in 0..s.length - 1
+    for j in i..s.length - 1
+      str = s[i..j]
+      hash = {}
+      str.each_char do |c|
+        hash[c] ||= 0
+        hash[c] += 1
+      end
+
+      count = 0
+      hash.each do |char, freq|
+        next if freq > 1
+
+        count += 1
+      end
+
+      arr << s[i..j] if count <= k
+    end
+  end
+
+
+  max = 0
+  result = ''
+  arr.each  { |s| s.length > max ? max = s.length; result = s : max }
+  return result.length
+end

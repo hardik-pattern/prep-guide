@@ -464,7 +464,20 @@ publisher.notify
             }
 
 #     9. Bridge Design Pattern (Structural Design Pattern)
-#         It is used to separate the abstraction from its implementation
+#         It is used to separate the abstraction from its implementation so that the two can vary independently
+#     10. Facade (Structural Design Pattern)
+        # Here give the example of the 3rd party library from which we are implementing the functionality
+        # but this will make the code tightly coupled with the library. Instead we can create a facade class/
+        # which will have the methods to call the 3rd party library and we can use that class in our code
+#     11. Flyweight (Structural Design Pattern)
+        # consider the example of a game where we have multiple players and many objects
+        # now if the game has too many objects then it will take a lot of memory
+        # so to avoid this identify the common objects which has somearound same properties. and pack them in once and use them to reduce objects
+#     12. Proxy (Structural Design Pattern)
+        # The Proxy pattern suggests that you create a new proxy class with the same interface as an original service object. Then you update your app so that it passes the proxy object to all of the original object’s clients. Upon receiving a request from a client, the proxy creates a real service object and delegates all the work to it.
+        # eg is proxy serverz
+
+
 
 
 #     8. Observer (Behavioral Design Pattern)
@@ -476,6 +489,9 @@ publisher.notify
 #         It is used to define a family of algorithms, encapsulate each one, and make them interchangeable
 #         Eg, if I want to create a class which will have different policies for different users
 #         I can create a class which will inherit from the base class and override the methods to add new functionality
+#     10. Mediator Design Pattern (Behavioral Design Pattern)
+          # Consider it as the loose coupling between the classes. all entities are connected to a mediator and they pass on the information to each other via mediator
+          # for eg: online auction system
 
 # ---------------------------------------------------------------------------------------------------------------------
 
