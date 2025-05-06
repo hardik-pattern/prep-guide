@@ -1056,3 +1056,14 @@ Resource to read:
 
 # Metaprogramming in Ruby
 # https://courses.bigbinaryacademy.com/learn-rubyonrails/rails-macros-and-metaprogramming/
+
+
+Action Pack vs Action View in rails
+  Action Pack: It handles routing, controllers, and request/response handling.
+      Action Controller: It handles the request/response handling.
+      Action Dispatch: It handles the routing. decides which controller, method to use based on the request.
+
+  Action View: It handles the rendering of views, partial views, helpers, etc.
+
+
+

@@ -150,3 +150,5 @@ Some Advance SQL Function:
      AND candidate <> ''
   )
 
+# window function in
+

@@ -250,3 +250,8 @@ end
 email_service = EmailService.new
 user = User.new(email_service)
 user.notify
+
+
+# Some cool blogs and articles to read:
+
+# https://www.bigbinary.com/blog/scaling-rails-series

@@ -475,7 +475,7 @@ publisher.notify
         # so to avoid this identify the common objects which has somearound same properties. and pack them in once and use them to reduce objects
 #     12. Proxy (Structural Design Pattern)
         # The Proxy pattern suggests that you create a new proxy class with the same interface as an original service object. Then you update your app so that it passes the proxy object to all of the original object’s clients. Upon receiving a request from a client, the proxy creates a real service object and delegates all the work to it.
-        # eg is proxy serverz
+        # eg is proxy server
 
 
 
