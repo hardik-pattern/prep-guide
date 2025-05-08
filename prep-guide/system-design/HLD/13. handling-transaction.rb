@@ -95,3 +95,47 @@
   # 3. Participant is not able to acquire the lock.
 
 # but the issue came if the commit ok message is lost. It blocks the whole system. so to resolve this issue there we have 3-phase commit.
+
+# ------------------------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------------------
+
+
+# 3 phase commit:
+  # 1. Prepare phase: Coordinator sends the prepare message to all the participants.
+  # 2. Pre commit phase: Along with this coordinator also sends that if incase he is down what decision participant should take.
+  # 3. commit phase: Coordinator sends the commit message to all the participants.
+
+
+# Application                             Transaction Coordinator                   Participant(Order Service)                     Participant(Inventory Service)
+# |                                        |                                          |                                          |
+# |     participate in operation           |                                          |                                          |
+# |--------------------------------------->|                                          |                                          |
+# |                                        |                                          |                                          |
+# |                                        |      sends prepare message               |                                          |
+# |                                        |----------------------------------------->|                                          |
+# |                                        |------------------------------------------------------------------------------------>| (at this point participants acquires the lock and makes the changes in db )
+# |                                        |                                          |                                          | (but do not commit the changes)
+# |                                        |            ok                            |                                          |
+# |                                        |<-----------------------------------------|                                          |
+# |                                        |<------------------------------------------------------------------------------------|
+# |                                        |                                          |                                          |
+# |                                        |             pre-commit                   |                                          |
+# |                                        |----------------------------------------->|                                          |
+# |                                        |------------------------------------------------------------------------------------>|
+# |                                        |                                          |                                          |
+# |                                        |             ok                           |                                          |
+# |                                        |<-----------------------------------------|                                          |
+# |                                        |<------------------------------------------------------------------------------------|
+# |                                        |                                          |                                          |
+# |                                        |                                          |                                          |
+# |                                        |          commit                          |                                          |
+# |                                        |----------------------------------------->|                                          |
+# |                                        |------------------------------------------------------------------------------------>|
+# |<---------------------------------------|                                          |                                          |
+
+# Here in case if pre-commit fails then every coordinator calls everyone
+  # if no ones get the message from coordinator then every participant will do the rollback.
+  # once coordinator lives then it will abort itself.
+
+
+# SAGA pattern: for more details please check: "3. microservices-strategy.rb"
