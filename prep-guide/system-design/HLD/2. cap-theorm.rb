@@ -30,7 +30,7 @@ consider we have a distributed system and databases are connected to each other.
         #    /   \
         #  B<---->C (X)
 
-    # Here if the obe one of the node is down then we can still read/write to the other node.
+    # Here if the one of the node is down then we can still read/write to the other node.
     # Since the single node is available so the system is consistent.
     # But since one node is down we cannot achieve availability.
 
