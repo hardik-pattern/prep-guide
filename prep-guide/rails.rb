@@ -980,7 +980,45 @@ Destroying an Object
   around_destroy
   after_destroy
 
+Triggering callbacks
+    create
+    create!
+    destroy
+    destroy!
+    destroy_all
+    destroy_by
+    save
+    save!
+    save(validate: false)
+    save!(validate: false)
+    toggle!
+    touch
+    update_attribute
+    update_attribute!
+    update
+    update!
+    valid?
+    validate
 
+Skip callbacks
+    decrement!
+    decrement_counter
+    delete
+    delete_all
+    delete_by
+    increment!
+    increment_counter
+    insert
+    insert!
+    insert_all
+    insert_all!
+    touch_all
+    update_column
+    update_columns
+    update_all
+    update_counters
+    upsert
+    upsert_all
 
 Resource to read:
 #* active model vs active record vs active resource >> # https://stackoverflow.com/a/12765490/30052210
@@ -1067,3 +1105,7 @@ Action Pack vs Action View in rails
 
 
 
+# Whats new in rails 8
+
+# for security reason rails introduced new gem called as brakeman
+# to execute it run bin/brakeman

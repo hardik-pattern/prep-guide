@@ -36,6 +36,7 @@
 # - ArrayList: Resizable array implementation of List
 # - LinkedList: Doubly-linked list implementation of List and Deque
 # - HashSet: Hash table implementation of Set
+# - HashSet: Hash table implementation of Set
 # - TreeSet: Red-black tree implementation of NavigableSet
 # - PriorityQueue: Priority heap implementation of Queue
 # - ArrayDeque: Resizable array implementation of Deque
