@@ -1,4 +1,4 @@
-# common interview questions: https://github.com/gardeziburhan/rails_interview_questions
+# common interview questions: https://github.com/gardeziburhan/ruby-on-rails-interview-questions-answers
 
 # Tell me about yourself/ introduce yourself?
 # What is your Role and responsibility?
@@ -277,3 +277,7 @@ def length_of_longest_substring_k_distinct(s, k)
   arr.each  { |s| s.length > max ? max = s.length; result = s : max }
   return result.length
 end
+
+# Explain difference between process and thread?
+# How do we prevent the race condition?
+# What is deadlock?

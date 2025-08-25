@@ -255,3 +255,13 @@ user.notify
 # Some cool blogs and articles to read:
 
 # https://www.bigbinary.com/blog/scaling-rails-series
+
+
+Explain mass-assignment vulnerability.
+What is difference between Gems and Plugins?
+What is difference between form_for and form_tag?
+What is difference between TDD and BDD?
+What do you mean by Agile Development?
+What is difference between Gemfile and Gemfile.lock?
+What are your favourite Gems?
+6. Explain the use of 'require' and 'include' in Ruby.

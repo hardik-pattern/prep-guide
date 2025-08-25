@@ -30,7 +30,8 @@ Rollback the Transaction: If an error occurs or the transaction cannot be comple
 
 SQL query -
 
-https://www.w3resource.com/"1. Knows AI/ML
+https://www.w3resource.com/
+1. Knows AI/ML
 2. Knows Basics of programming
 3. Knows DBMS
 4. Have logical thinking"sql-exercises/joins-hr/index.php

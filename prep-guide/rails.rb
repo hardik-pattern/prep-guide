@@ -702,7 +702,7 @@ Ruby on Rails guards against SQL injection attacks by utilizing parameterized qu
 
 5. CSRF - Cross Site Request Forgery
 
-Cross-Site Request Forgery (CSRF) is a type of web application vulnerability where an attacker tricks a user into performing unwanted actions on a web application in which theyre authenticated. In other words, a CSRF attack takes advantage of the trust that a web application has in the users browser.
+Cross-Site Request Forgery (CSRF) is a type of web application vulnerability where an attacker tricks a user into performing unwanted actions on a web application in which they are authenticated. In other words, a CSRF attack takes advantage of the trust that a web application has in the users browser.
 To better understand CSRF, lets use an analogy. Imagine youre at a coffee shop using a public Wi-Fi network. You log in to your banks website to check your account balance. Meanwhile, a hacker is sitting at another table on the same network. They notice that youre logged in to your banks website and decide to take advantage of your authenticated session. They send a request to your banks website, pretending to be you, and instruct the bank to transfer money from your account to theirs. This would be an example of a CSRF attack.
 
 Out of the box, Rails includes a security feature called protect_from_forgery, which is enabled by default in every new Rails application. This feature helps to prevent CSRF attacks by adding a unique token to each form in your application. This token is also stored in the users session.
