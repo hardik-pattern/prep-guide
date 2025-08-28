@@ -1,18 +1,3 @@
-===========================
-Intoduction of project
-===========================
-SelluSeller is an online multi-channel selling software, that offers a one- stop solution to manage selling on multiple local and international marketplaces, online shops, and sales channels with ease. SelluSeller enables sellers to manage Listings, Orders, Promotions, Marketing, Inventory, Shipping, Billing, Analytics, Reports- Everything in One Place.
-
-SelluSeller helps online sellers, brands, and distributors to list and sell products online with features such as pricing & promotion management, listing management, catalogue management, centralized inventory & order management, payment reconciliation and many more.
-
-
-----------------------------------------------------------------------------------------------------
-There are 3 teams in our project 1)Backend 2)UI 3)Integration team.
-
-I am working in backend and Integration team. Handles all backend work like giving the rest APIs to UI for represantation of our APP means interaction between Backend and UI after that integrate marketplace level API with our APP such as sync inventory,fetch orders from marketplace to our APP, Fetch products and list the product both directional also payment gateway integration.
-----------------------------------------------------------------------------------------------------
-
-
 Rails OOPS in Ruby
 ===========================
 
@@ -24,21 +9,19 @@ Technically in encapsulation, the variables or data of a class are hidden from a
 Encapsulation can be achieved by declaring all the variables in the class as private and writing public methods in the class to set and get the values of variables.
 
 class Demoencapsulation
+  def initialize(id, name, addr)
+   # Instance Variables
+   @cust_id = id
+   @cust_name = name
+   @cust_addr = addr
+  end
 
-def initialize(id, name, addr)
-
- # Instance Variables
- @cust_id = id
- @cust_name = name
- @cust_addr = addr
- end
-
- # displaying result
- def display_details()
- puts "Customer id: #@cust_id"
- puts "Customer name: #@cust_name"
- puts "Customer address: #@cust_addr"
- end
+   # displaying result
+  def display_details()
+   puts "Customer id: #@cust_id"
+   puts "Customer name: #@cust_name"
+   puts "Customer address: #@cust_addr"
+  end
 end
 
 # Create Objects
@@ -87,7 +70,6 @@ Abstraction is trying to minimize information so that the developer can concentr
 Data Abstraction in Classes: we can use classes to perform data abstraction in ruby. The class allows us to group information and methods using access specifiers (private, protected, public). The Class will determine which information should be visible and which is not.
 
 class Geeks
-
     # defining publicMethod
 
     public
@@ -173,7 +155,6 @@ Big Car
 The above code is a very simple way of executing basic polymorphism. Here, the tyreType method is called using different objects like Car and Truck. The Car and Truck classes both are the child classes of Vehicle. They both inherit the methods of vehicle class (primarily the tyretype method).
 
 
-
 Polymorphism using Duck-Typing
 In Ruby, we focus on the object’s capabilities and features rather than its class. So, Duck Typing is nothing but working on the idea of what an object can do rather than what it actually is. Or, what operations could be performed on the object rather than the class of the object.
 Here is a small program to represent the before mentioned process.
@@ -184,7 +165,6 @@ brightness_4
 
 # Creating three different classes
 class Hotel
-
   def enters
     puts "A customer enters"
   end
@@ -196,12 +176,10 @@ class Hotel
   def room(customer)
     customer.room
   end
-
 end
 
 # Creating class with two methods
 class Single
-
   def type
     puts "Room is on the fourth floor."
   end
@@ -209,13 +187,11 @@ class Single
   def room
     puts "Per night stay is 5 thousand"
   end
-
 end
 
 
 class Couple
-
- # Same methods as in class single
+  # Same methods as in class single
   def type
     puts "Room is on the second floor"
   end
@@ -2025,42 +2001,27 @@ The example above uses a custom environment called "staging" for a production li
 
 
 module Utils
+  def welcome
+    puts 'hello'
+  end
 
- def welcome
-
-  puts 'hello'
-
+  def self.welcome
+   puts 'hi'
+  end
 end
-
-def self.welcome
-
- puts 'hi'
-
-end
-
-end
-
 
 
 class A
-
-extend Utils
-
+  extend Utils
 end
 
 a = A.new
-
 a.welcome => ‘hello’
-
 A.welcome => ‘hi’
 
 
 
--
-
-a.welcome =>
-
-A.welcome => ‘hello’
+a.welcome => A.welcome => ‘hello’
 
 
 super/super method
@@ -2136,14 +2097,10 @@ Resin
 Application server: It encompasses Web container as well as EJB container. Application servers organize the run atmosphere for enterprises applications. Application server may be a reasonably server that mean how to put operating system, hosting the applications and services for users, IT services and organizations. In this, user interface similarly as protocol and RPC/RMI protocols are used.
 
 
-
-
 Examples of Application Server:
-
-Weblogic
-JBoss
-Websphere
-
+  Weblogic
+  JBoss
+  Websphere
 
 Difference between web server and application server:
 

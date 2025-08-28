@@ -522,7 +522,7 @@ WHERE p.imageable_type = 'Employee'
 
 Q. Rack Middleware in rails
 
-- Rack is a minimal, modular, and adaptable interface for developing web applications in Ruby. It provides a common API for connecting web servers and web frameworks.
+- Rack is a minimal, modular, and adaptable interface for developing web applications in Ruby. It provides a common API for connecting web servers and web frameworks.nd adaptable interface for developing web applications in Ruby. It provides a common API for connecting web servers and web frameworks.
 For example with Rack I can have separate stages of the pipeline doing:
 
 Authentication: when the request arrives, are the users logon details correct? How do I validate this OAuth, HTTP Basic Authentication, name/password?
