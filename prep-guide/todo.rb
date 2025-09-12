@@ -263,5 +263,5 @@ What is difference between form_for and form_tag?
 What is difference between TDD and BDD?
 What do you mean by Agile Development?
 What is difference between Gemfile and Gemfile.lock?
-What are your favourite Gems?
+What are your favorite Gems?
 6. Explain the use of 'require' and 'include' in Ruby.

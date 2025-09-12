@@ -261,7 +261,7 @@ Let’s have a look at how you can use Redis in your Ruby applications!
 advantages
 -no of request calls reduced
 -database load reduced
--recomputaion decreased
+-recomputation decreased
 
 with the help write back mechanism updated data stored in Redis Storage when update / deletion / creation performed on Database
 
@@ -390,7 +390,7 @@ Rails around filters contain codes that are executed both before and after contr
 ================================
 Is ruby multi therading language.
 ================================
-A multithreaded program has more than one thread of execution. Within each thread, statements are executed sequentially, but the threads themselves may be executed in parallel on a multicore CPU, for example. Often on a single CPU machine, multiple threads are not actually executed in parallel, but parallelism is simulated by interleaving the execution of the threads.
+A multithreaded program has more than one thread of execution. Within each thread, statements are executed sequentially, but the threads themselves may be executed in parallel on a multi-core CPU, for example. Often on a single CPU machine, multiple threads are not actually executed in parallel, but parallelism is simulated by interleaving the execution of the threads.
 
 Ruby makes it easy to write multi-threaded programs with the Thread class. Ruby threads are a lightweight and efficient way to achieve concurrency in your code.
 
@@ -647,17 +647,12 @@ It very cleanly separates out the different stages of processing a request - sep
 
 For example with Rack I can have separate stages of the pipeline doing:
 
-Authentication: when the request arrives, are the users logon details correct? How do I validate this OAuth, HTTP Basic Authentication, name/password?
-
-Authorisation: is the user authorised to perform this particular task?, i.e. role-based security.
-
-Caching: have I processed this request already, can I return a cached result?
-
-Decoration: how can I enhance the request to make downstream processing better?
-
-Performance & Usage Monitoring: what stats can I get from the request and response?
-
-Execution: actually handle the request and provide a response.
+Authentication: when the request arrives, are the users login details correct? How do I validate this OAuth, HTTP Basic Authentication, name/password?
+  Authorization: is the user authorized to perform this particular task?, i.e. role-based security.
+  Caching: have I processed this request already, can I return a cached result?
+  Decoration: how can I enhance the request to make downstream processing better?
+  Performance & Usage Monitoring: what stats can I get from the request and response?
+  Execution: actually handle the request and provide a response.
 
 Being able to separate the different stages (and optionally include them) is a great help in developing well structured applications.
 
