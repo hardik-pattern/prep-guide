@@ -281,3 +281,51 @@ end
 # Explain difference between process and thread?
 # How do we prevent the race condition?
 # What is deadlock?
+
+
+# Questions asked in Pattern
+
+# Tech round-1
+1. Explain me your project? What was your role? How you sync the data to multiple database?
+2. Explain me difference between has_many: through and has_and_belongs_to_many association?
+3. Explain me the different callbacks in rails?
+4. What is difference between after_commit and after_save? explain me in detail?
+5. Explain me action pack in rails?
+6. Explain me the different design patterns you have used in your project?
+7. What is MVC in rails?
+8. Explain me the assets pipeline in rails?
+9. Give me the complete flow of request in rails? from browser to rails server?
+10. SQL Question? Find the top 3 maximum  salary of the employee per department table?
+11. Coding question? find number of island(standard question from leetcode)
+
+# Tech round-2
+1. Explain me about your project? what was your role?
+2. What tool you used for deployment?
+3. What are your favorite gems in rails? (cancancan sidekiq webpack etc)
+4. Why do you use "cancancan" gem and how it works? (similar for each gem)
+5. Explain me the working of background job in rails?
+6. What are the ways to optimize the performance of the rails application?
+7. How do you monitor the performance of the rails application? (appsignal)
+8. eager_loading, preloading, lazy loading in rails? how it works? mainly focus on optimization of the application
+9. Do you have any experience in AWS, DigitalOcean? (EC2, RDS, S3, etc)
+10. Explain me any service provided by the cloud provider you used?
+11. Explain me the observer design pattern in rails?
+12. SQL question:
+    Given the productSales table
+    product_id | sales_count | date
+    1          | 100         | 2021-01-01
+    1          | 200         | 2021-01-02
+    2          | 150         | 2021-01-01
+    2          | 250         | 2021-01-02
+    3          | 200         | 2021-01-01
+    3          | 300         | 2021-01-02
+  find the product_id, min_sales, max_sales before 6 months from now
+
+# Tech + Manager round-3
+1. Explain me about your project? what was your role?
+2. What is your strength?
+3. What if I call your manager what he will tell you about you?
+4. Have you faced the client call specially escalated client
+5. How do you manage the development challenges and stake holders demands?
+6. What are your lows in the current organization?
+7. What is your feedback from your previous organization?
