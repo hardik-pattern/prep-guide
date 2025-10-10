@@ -1,3 +1,4 @@
+resource: https://github.com/donnemartin/system-design-primer
 # https://github.com/donnemartin/system-design-primer?tab=readme-ov-file#system-design-interview-questions-with-solutions
 
 Q. Kubernetes and Docker?
