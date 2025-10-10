@@ -1,4 +1,5 @@
 
+
 Q. Key Properties of Transactions (ACID)
 
 A database transaction is a sequence of operations performed as a single logical unit of work.
@@ -153,3 +154,12 @@ Some Advance SQL Function:
 
 # window function in
 
+
+
+Prep Resources
+
+https://datalemur.com/questions?category=SQL
+https://www.sql-practice.com/
+https://leetcode.com/studyplan/top-sql-50/
+https://pgexercises.com/questions/aggregates/
+https://platform.stratascratch.com/coding?code_type=3&is_freemium=1&page_size=10&order_field=difficulty&difficulties=1&difficulties=2
