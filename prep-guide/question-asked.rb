@@ -329,3 +329,27 @@ end
 5. How do you manage the development challenges and stake holders demands?
 6. What are your lows in the current organization?
 7. What is your feedback from your previous organization?
+
+
+# Questions asked in Zendesk
+
+# Tech Round- 1
+1. Explain me about your project? what was your role?
+2. Write the code to verify the credit card is valid or invalid? (Luhn Algorithm)
+3. Explain me the different design patterns you have used in your project?
+
+# Tech Round- 2 (System design + coding)
+1. Explain me about your project? what was your role?
+2. Design the System for Twitter
+    1. User should be able to login/signup
+    2. User should be able to post a tweet
+    3. User should be able to follow/unfollow other users
+    4. User should be able to like the post
+    5. User should be able to see the feed of the posts from the users he is following
+
+# Tech Round -3 (Manager Round)
+1. Explain me about yourself? your project? what was your role?
+2. What are the challenges you faced in your project and how you overcame them?
+3. Is there any situation where you had a conflict with your team member? how did you handle it?
+4. How do you manage your time and prioritize your tasks?
+5. Is there any case where you had to take a difficult decision? what was the outcome?
