@@ -1,0 +1,1 @@
+"rails generate Product name:string! description:string" !-> make it required
